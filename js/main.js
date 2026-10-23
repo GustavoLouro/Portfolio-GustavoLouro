@@ -5,7 +5,7 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initParticleCanvas();
+  initCyberTopographyCanvas();
   initCursorAura();
   initNavigation();
   initProjectFilters();
@@ -16,123 +16,164 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. CANVAS DE PARTÍCULAS INTERATIVO (NEBULA MESH)
+   1. CANVAS DE TOPOGRAFIA CIBERNÉTICA & ONDAS QUANTUM 3D (FUNDO EXCLUSIVO)
    ========================================================================== */
-function initParticleCanvas() {
+function initCyberTopographyCanvas() {
   const canvas = document.getElementById('particle-canvas');
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
   let width, height;
-  let particles = [];
-  let mouse = { x: -1000, y: -1000, radius: 140 };
+  let time = 0;
+  let mouse = { x: -1000, y: -1000, targetX: -1000, targetY: -1000 };
+  let scrollY = window.pageYOffset;
 
-  // Verifica preferências de acessibilidade
+  // Respeita acessibilidade de movimento
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReducedMotion) return;
 
   function resize() {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
-    createParticles();
   }
 
-  window.addEventListener('resize', () => {
-    resize();
+  window.addEventListener('resize', resize);
+  window.addEventListener('scroll', () => {
+    scrollY = window.pageYOffset;
   });
 
   window.addEventListener('mousemove', (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
+    mouse.targetX = e.clientX;
+    mouse.targetY = e.clientY;
   });
 
   window.addEventListener('mouseout', () => {
-    mouse.x = -1000;
-    mouse.y = -1000;
+    mouse.targetX = -1000;
+    mouse.targetY = -1000;
   });
 
-  class Particle {
-    constructor() {
-      this.x = Math.random() * width;
-      this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.6;
-      this.vy = (Math.random() - 0.5) * 0.6;
-      this.radius = Math.random() * 2 + 1;
-      this.baseAlpha = Math.random() * 0.4 + 0.2;
-      this.color = Math.random() > 0.4 ? '0, 242, 254' : '121, 40, 202';
-    }
+  // Configuração das linhas topográficas cibernéticas
+  const totalRibbons = 24;
+  const segments = 45;
+  const sparks = [];
 
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
+  for (let i = 0; i < 40; i++) {
+    sparks.push({
+      x: Math.random() * 2000,
+      y: Math.random() * 1200,
+      speedX: (Math.random() - 0.5) * 0.8,
+      speedY: (Math.random() - 0.5) * 0.8,
+      radius: Math.random() * 1.8 + 0.8,
+      alpha: Math.random() * 0.5 + 0.3,
+      color: Math.random() > 0.45 ? '0, 242, 254' : '121, 40, 202'
+    });
+  }
 
-      if (this.x < 0 || this.x > width) this.vx *= -1;
-      if (this.y < 0 || this.y > height) this.vy *= -1;
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+    time += 0.012;
 
-      // Interação com o mouse (repulsão suave)
-      const dx = mouse.x - this.x;
-      const dy = mouse.y - this.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
+    // Suaviza a posição do mouse (lerp)
+    mouse.x += (mouse.targetX - mouse.x) * 0.08;
+    mouse.y += (mouse.targetY - mouse.y) * 0.08;
 
-      if (dist < mouse.radius) {
-        const force = (mouse.radius - dist) / mouse.radius;
-        const angle = Math.atan2(dy, dx);
-        this.x -= Math.cos(angle) * force * 3;
-        this.y -= Math.sin(angle) * force * 3;
-      }
-    }
+    // Gradiente dinâmico de fundo e perspectiva
+    const horizonY = height * 0.38 + (scrollY * 0.04);
+    const bottomY = height * 1.05;
 
-    draw() {
+    // 1. Desenha as Ondas Topográficas 3D
+    for (let r = 0; r < totalRibbons; r++) {
+      const progress = r / totalRibbons;
+      // Perspectiva: linhas mais próximas do fundo são mais comprimidas
+      const baseY = horizonY + Math.pow(progress, 1.6) * (bottomY - horizonY);
+      const amp = (18 + progress * 40);
+      const alpha = 0.08 + progress * 0.32;
+
       ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${this.color}, ${this.baseAlpha})`;
-      ctx.fill();
-    }
-  }
 
-  function createParticles() {
-    particles = [];
-    const particleCount = Math.min(Math.floor((width * height) / 14000), 75);
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
-    }
-  }
+      const ribbonPoints = [];
+      const stepX = width / segments;
 
-  function connectParticles() {
-    const maxDist = 110;
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
+      for (let s = 0; s <= segments; s++) {
+        const x = s * stepX;
+        
+        // Fórmulas harmônicas senoidais entrelaçadas
+        let wave = Math.sin(x * 0.0035 + time * 0.9 + r * 0.28) * amp
+                 + Math.cos(x * 0.007 - time * 0.6 + r * 0.2) * (amp * 0.45);
+
+        // Deformação dinâmica por gravidade/repulsão do mouse
+        const dx = mouse.x - x;
+        const dy = mouse.y - baseY;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < maxDist) {
-          const alpha = (1 - dist / maxDist) * 0.18;
+        if (dist < 260) {
+          const force = (1 - dist / 260);
+          wave -= Math.sin(dist * 0.05 - time * 3) * force * 52;
+        }
+
+        const y = baseY + wave;
+        ribbonPoints.push({ x, y });
+
+        if (s === 0) {
+          ctx.moveTo(x, y);
+        } else {
+          // Curvas de bezier suaves
+          const prev = ribbonPoints[s - 1];
+          const cx = (prev.x + x) / 2;
+          const cy = (prev.y + y) / 2;
+          ctx.quadraticCurveTo(prev.x, prev.y, cx, cy);
+        }
+      }
+
+      // Estilo das linhas: gradiente Ciano Neon para Violeta Cósmico
+      const strokeGrad = ctx.createLinearGradient(0, baseY - amp, width, baseY + amp);
+      strokeGrad.addColorStop(0, `rgba(0, 242, 254, ${alpha * 0.6})`);
+      strokeGrad.addColorStop(0.5, `rgba(79, 172, 254, ${alpha})`);
+      strokeGrad.addColorStop(1, `rgba(121, 40, 202, ${alpha * 0.7})`);
+
+      ctx.strokeStyle = strokeGrad;
+      ctx.lineWidth = 1 + progress * 1.4;
+      ctx.stroke();
+
+      // Conexões transversais (grid cyber-mesh) a cada 4 segmentos
+      if (r % 2 === 0) {
+        for (let s = 0; s < ribbonPoints.length; s += 5) {
+          const pt = ribbonPoints[s];
           ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(0, 242, 254, ${alpha})`;
-          ctx.lineWidth = 0.8;
-          ctx.stroke();
+          ctx.arc(pt.x, pt.y, 1.2 + progress * 1.5, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(0, 242, 254, ${alpha * 0.75})`;
+          ctx.fill();
         }
       }
     }
-  }
 
-  function animate() {
-    ctx.clearRect(0, 0, width, height);
+    // 2. Partículas Quantum que viajam pelo éter
+    sparks.forEach((spark) => {
+      spark.x += spark.speedX;
+      spark.y += spark.speedY;
 
-    for (let i = 0; i < particles.length; i++) {
-      particles[i].update();
-      particles[i].draw();
-    }
+      if (spark.x < 0) spark.x = width;
+      if (spark.x > width) spark.x = 0;
+      if (spark.y < 0) spark.y = height;
+      if (spark.y > height) spark.y = 0;
 
-    connectParticles();
-    requestAnimationFrame(animate);
+      // Glow dinâmico se perto do mouse
+      const dmx = mouse.x - spark.x;
+      const dmy = mouse.y - spark.y;
+      const mdist = Math.sqrt(dmx * dmx + dmy * dmy);
+      const glowMultiplier = mdist < 180 ? 2 : 1;
+
+      ctx.beginPath();
+      ctx.arc(spark.x, spark.y, spark.radius * glowMultiplier, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${spark.color}, ${Math.min(spark.alpha * glowMultiplier, 0.9)})`;
+      ctx.fill();
+    });
+
+    requestAnimationFrame(draw);
   }
 
   resize();
-  animate();
+  draw();
 }
 
 /* ==========================================================================
@@ -291,7 +332,7 @@ const projectData = {
   'vetpurina-ai': {
     title: 'VetPurina AI — Assistente Inteligente Veterinária',
     tag: 'IA Aplicada & Engenharia de Software',
-    image: 'assets/projects/luxury_suv.jpg',
+    image: 'assets/projects/vetpurina_care.jpg',
     description: 'Solução inteligente voltada a médicos-veterinários para suporte clínico, prescrição nutricional automatizada da linha Purina Pro Plan, cálculo de dietas e gamificação de recomendações profissionais.',
     specs: [
       'Módulo de triagem e cálculo automático de porções e calorias veterinárias por perfil de pet.',
@@ -451,3 +492,4 @@ function initScrollAnimations() {
     observer.observe(el);
   });
 }
+

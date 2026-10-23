@@ -4,6 +4,7 @@ REGISTRO COMPLETO DE PROMPTS E PROCESSO DE CO-CRIAÇÃO
 Aluno: Gustavo Rezende Louro
 RM: 570708 | FIAP — Engenharia de Software (Turma ESPW)
 E-mail: gustavotatobelgu@gmail.com
+Localização: Santo André, SP
 Repositório: https://github.com/GustavoLouro/checkpoint-6-portfolio
 Deploy: https://gustavolouro.github.io/checkpoint-6-portfolio/
 ================================================================================
@@ -87,6 +88,16 @@ espaço incorreto. Ajuste o media query para recuar a linha da timeline para 15p
 posicionar os nós no topo de cada item e transformar a navbar em um menu hambúrguer 
 com animação suave de slide-down e backdrop blur de 20px."
 
+[PROMPT DE AJUSTE 6 — Fundo Exclusivo 3D, Eventos Reais, Foto Purina e Localização]
+"Duas coisas que eu mudaria: faça algum fundo diferente nesse portfólio, mas que 
+seja muito diferente dos iguais (substitua os pontinhos genéricos por uma malha 
+topográfica interativa 3D de ondas cibernéticas senoidais com gradiente ciano e 
+violeta que deforme com a aproximação do mouse). Quanto aos eventos, fui ao 
+FIAP Summit 2026 no dia 1 de outubro e fui ao B3 Career Summit 2026 no dia 26 de 
+setembro — atualize a timeline com essas datas e detalhes oficiais. No projeto da 
+Purina Vet AI, coloque uma foto de um veterinário atendendo um cão. E atualize 
+minha localização para Santo André, SP."
+
 
 --------------------------------------------------------------------------------
 03. REGISTRO DE CORREÇÕES (FICHAS CURTAS — ITEM 3.4 DO CHECKPOINT)
@@ -127,6 +138,13 @@ FICHA DE CORREÇÃO 5:
 - Resultado: Resolveu totalmente. A leitura em smartphones ficou limpa, com espaçamento confortável e sem scroll horizontal indesejado.
 - Aprendizado: Fornecer os pontos de interrupção (breakpoints) e comportamentos de margem reduzida para elementos com layouts verticais assimétricos logo na primeira instrução de CSS.
 
+FICHA DE CORREÇÃO 6:
+- Campo: O que registrar
+- Problema: O fundo com pontinhos dispersos parecia genérico e não transmitia a exclusividade visual desejada; os eventos precisavam retratar presenças oficiais reais (FIAP Summit e B3 Career Summit); a imagem de VetPurina AI usava um mockup provisório e a localização precisava ser Santo André, SP.
+- Prompt de correção: "Faça algum fundo diferente nesse portfólio, muito diferente dos iguais (malha topográfica 3D em ondas senoidais harmônicas); atualize os eventos para FIAP Summit 2026 (01 de outubro) e B3 Career Summit 2026 (26 de setembro); substitua a foto do VetPurina AI por um veterinário atendendo um cão; e atualize a localização para Santo André, SP."
+- Resultado: Resolveu totalmente. O novo canvas gera uma paisagem topográfica cibernética viva em tempo real a 60fps, com nós quânticos e reação gravitacional ao mouse; a timeline agora documenta os dois summits reais de prestígio; e o card da Purina traz foto profissional de atendimento clínico veterinário.
+- Aprendizado: O processo de vibecoding atinge maturidade quando o desenvolvedor não aceita soluções visuais comuns geradas por padrão pela IA e direciona ativamente a ferramenta para criar soluções matemáticas personalizadas (trigonometria em Canvas) e dados 100% verídicos da sua trajetória.
+
 
 --------------------------------------------------------------------------------
 04. REFLEXÃO FINAL (ITEM 3.5 DO CHECKPOINT)
@@ -147,3 +165,4 @@ o portfólio entre Português e Inglês com um clique, adicionaria um visualizad
 3D interativo via Three.js ou WebGL para um modelo automotivo giratório no Hero, 
 e integraria uma API serverless (como Resend ou EmailJS) para disparo direto de 
 e-mails em tempo real sem depender do client-side.
+

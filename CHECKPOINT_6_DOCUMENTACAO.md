@@ -7,6 +7,7 @@
 * **Curso:** Bacharelado em Engenharia de Software (Turma ESPW)
 * **Disciplina:** Front-End Design & Development // Vibecoding
 * **E-mail:** gustavotatobelgu@gmail.com
+* **Localização:** Santo André, SP
 * **Repositório do Projeto:** [github.com/GustavoLouro/checkpoint-6-portfolio](https://github.com/GustavoLouro)
 * **Deploy da Landing Page:** [gustavolouro.github.io/checkpoint-6-portfolio](https://gustavolouro.github.io)
 
@@ -128,6 +129,9 @@ Outfit, Plus Jakarta Sans e JetBrains Mono, e que o site seja 100% responsivo.
 * **Prompt de Ajuste 5 (Timeline & Layout Mobile Responsivo):**
   > *"Na visualização em dispositivos móveis (telas abaixo de 768px), os nós da timeline estavam desalinhados com o texto e o menu de navegação da navbar estava ocupando espaço incorreto. Ajuste o media query para recuar a linha da timeline para 15px, posicionar os nós no topo de cada item e transformar a navbar em um menu hambúrguer com animação suave de slide-down e backdrop blur de 20px."*
 
+* **Prompt de Ajuste 6 (Fundo 3D Exclusivo, Eventos Reais, Asset da Purina e Localização):**
+  > *"Duas coisas que eu mudaria: faça algum fundo diferente nesse portfólio, mas que seja muito diferente dos iguais (substitua os pontinhos genéricos por uma malha topográfica interativa 3D de ondas cibernéticas senoidais com gradiente ciano e violeta que deforme com a aproximação do mouse). Quanto aos eventos, fui ao FIAP Summit 2026 no dia 1 de outubro e fui ao B3 Career Summit 2026 no dia 26 de setembro — atualize a timeline com essas datas e detalhes oficiais. No projeto da Purina Vet AI, coloque uma foto de um veterinário atendendo um cão. E atualize minha localização para Santo André, SP."*
+
 ---
 
 ### 3.4 Registro de Correções (Fichas de Auditoria de Interface)
@@ -172,6 +176,14 @@ Outfit, Plus Jakarta Sans e JetBrains Mono, e que o site seja 100% responsivo.
 | **Resultado** | Resolveu totalmente. Os textos agora desfrutam de 100% da largura útil sem qualquer corte ou transbordamento horizontal. |
 | **Aprendizado** | Fornecer os pontos de interrupção (breakpoints) e comportamentos de margem reduzida para elementos com layouts verticais assimétricos logo na primeira instrução de CSS. |
 
+#### Ficha 6: Fundo Personalizado 3D, Eventos Oficiais e Fidelidade Temática
+| Campo | Registro |
+| :--- | :--- |
+| **Problema** | O fundo com partículas pontuais comuns parecia genérico e não transmitia a exclusividade técnica exigida; os eventos precisavam retratar presenças oficiais reais (FIAP Summit e B3 Career Summit); o projeto VetPurina AI usava uma imagem automotiva provisória e a localização precisava ser Santo André, SP. |
+| **Prompt de Correção** | *"Faça algum fundo diferente nesse portfólio, mas que seja muito diferente dos iguais (malha topográfica interativa 3D de ondas cibernéticas); atualize os eventos para FIAP Summit 2026 (01 de outubro) e B3 Career Summit 2026 (26 de setembro); coloque uma foto de um veterinário atendendo um cão no VetPurina AI; e atualize minha localização para Santo André, SP."* |
+| **Resultado** | Resolveu totalmente. O canvas foi reconstruído com malha topográfica 3D em ondas senoidais harmônicas interativas com repulsão pelo mouse e partículas quânticas; a timeline agora documenta os dois summits reais de prestígio; e o card da Purina traz foto profissional de atendimento clínico veterinário. |
+| **Aprendizado** | O processo de vibecoding atinge maturidade quando o desenvolvedor não aceita soluções visuais comuns geradas por padrão pela IA e direciona ativamente a ferramenta para criar soluções matemáticas personalizadas (trigonometria em Canvas) e dados 100% verídicos da sua trajetória. |
+
 ---
 
 ### 3.5 Resultado Final & Reflexão Crítica
@@ -184,3 +196,4 @@ Outfit, Plus Jakarta Sans e JetBrains Mono, e que o site seja 100% responsivo.
   A harmonia visual alcançada foi além do planejado. O casamento entre a paleta escura profunda, os acentos luminosos ciano/violeta e os micro-movimentos do canvas de partículas conferiu um nível de sofisticação digno de plataformas consolidadas do Vale do Silício. A exibição dos quatro projetos reais desenvolvidos no ano demonstra com clareza minha evolução técnica em diferentes paradigmas de front-end.
 * **O que ainda mudaria / Próximos Passos:**  
   Para uma versão futura, adicionaria suporte a múltiplos idiomas (seletor PT-BR / EN), integraria um modelo 3D WebGL renderizado com Three.js para o hero automotivo e conectaria uma Cloud Function para persistência e envio automático das mensagens do formulário direto para o meu WhatsApp/Discord.
+
