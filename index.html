@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio profissional de Gustavo Rezende Louro — Engenharia de Software FIAP, Front-End Engineer & Vibecoding.">
+  <meta name="author" content="Gustavo Rezende Louro">
+
+  <title>Gustavo Louro | Front-End Engineer & Vibecoding</title>
+
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Boxicons para ícones vetoriais modernos -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Folha de Estilos Principal -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Canvas de Partículas Interativo em Segundo Plano -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Spotlight Aura do Mouse (Desktop) -->
+  <div class="cursor-aura"></div>
+
+  <!-- ==========================================================================
+       HEADER & NAVBAR FIXA
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#inicio" class="nav-brand" aria-label="Página Inicial de Gustavo Louro">
+        <div class="brand-badge">GL</div>
+        <div class="brand-title">
+          <span class="name">Gustavo Louro</span>
+          <span class="role">FRONT-END // VIBECODING</span>
+        </div>
+      </a>
+
+      <!-- Menu de Navegação Principal -->
+      <ul class="nav-menu">
+        <li><a href="#inicio" class="nav-link active">Início</a></li>
+        <li><a href="#sobre" class="nav-link">Sobre</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projetos" class="nav-link">Projetos</a></li>
+        <li><a href="#eventos" class="nav-link">Eventos</a></li>
+        <li><a href="#contato" class="nav-link">Contato</a></li>
+      </ul>
+
+      <!-- Ações do Header -->
+      <div class="nav-actions">
+        <div class="status-indicator">
+          <div class="pulse-dot"></div>
+          <span>Disponível para projetos</span>
+        </div>
+        <a href="#contato" class="btn-nav-cta">
+          <i class='bx bx-paper-plane'></i>
+          <span>Falar Comigo</span>
+        </a>
+        <button class="menu-toggle" aria-label="Abrir menu de navegação">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section id="inicio" class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Coluna de Apresentação Textual -->
+        <div class="hero-text-col">
+          <div class="hero-tag">
+            <i class='bx bx-code-alt'></i>
+            <span>ENGENHARIA DE SOFTWARE // FIAP RM570708</span>
+          </div>
+
+          <h1 class="hero-title">
+            Criando interfaces de <span class="gradient-text">alto impacto visual</span> & máxima performance.
+          </h1>
+
+          <p class="hero-subtitle">
+            Sou <strong>Gustavo Rezende Louro</strong>. Combino arquitetura front-end moderna, design refinado e 
+            <strong>Vibecoding assistido por Inteligência Artificial</strong> para transformar conceitos complexos em experiências web memoráveis e fluidas.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projetos" class="btn-primary">
+              <i class='bx bx-rocket'></i>
+              <span>Explorar Projetos</span>
+            </a>
+            <a href="#contato" class="btn-secondary">
+              <i class='bx bx-envelope'></i>
+              <span>Entrar em Contato</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Coluna Visual: Card Interativo & Métricas -->
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="card-header-chip">
+              <div class="chip-status">
+                <i class='bx bx-terminal'></i>
+                <span>DEV_ENVIRONMENT // ACTIVE</span>
+              </div>
+              <div class="chip-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <div class="hero-code-box">
+              <span class="keyword">const</span> <span class="property">developer</span> = {<br>
+              &nbsp;&nbsp;name: <span class="string">'Gustavo Rezende Louro'</span>,<br>
+              &nbsp;&nbsp;college: <span class="string">'FIAP — Engenharia de Software'</span>,<br>
+              &nbsp;&nbsp;skills: [<span class="string">'HTML5/CSS3'</span>, <span class="string">'JavaScript'</span>, <span class="string">'Vibecoding'</span>, <span class="string">'GSAP'</span>],<br>
+              &nbsp;&nbsp;focus: <span class="string">'Interfaces Cinematográficas & Clean Code'</span>,<br>
+              &nbsp;&nbsp;readyForChallenges: <span class="keyword">true</span><br>
+              };
+            </div>
+
+            <div class="hero-stats-mini">
+              <div class="stat-item">
+                <div class="stat-number gradient-text">+3</div>
+                <div class="stat-label">Projetos Chave</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number gradient-text">+15</div>
+                <div class="stat-label">Repositórios</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number gradient-text">100%</div>
+                <div class="stat-label">Responsividade</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO: SOBRE MIM & FORMAÇÃO ACADÊMICA
+       ========================================================================== -->
+  <section id="sobre" class="about-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <i class='bx bx-user'></i>
+          <span>TRAJETÓRIA & CONCEITO</span>
+        </div>
+        <h2 class="section-title">Engenharia de Interface com Visão de Futuro</h2>
+        <p class="section-desc">
+          Unindo os fundamentos clássicos da ciência da computação às mais inovadoras técnicas de prototipagem e desenvolvimento assistido por IA.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Biografia & Filosofia de Desenvolvimento -->
+        <div class="about-text-card">
+          <p>
+            Olá! Meu nome é <strong>Gustavo Rezende Louro</strong>, estudante de <strong>Engenharia de Software na FIAP</strong>. Desde os primeiros passos no desenvolvimento web, sempre busquei o equilíbrio perfeito entre <strong>elegância visual</strong>, <strong>código estruturado</strong> e <strong>velocidade de carregamento</strong>.
+          </p>
+          <p>
+            Neste ano, aprofundei minhas habilidades na criação de landing pages modernas, explorando desde frameworks tradicionais como <strong>Bootstrap 5</strong> e utilitários atômicos com <strong>Tailwind CSS</strong>, até o paradigma revolucionário do <strong>Vibecoding</strong> — onde a IA generativa atua como aceleradora de criatividade técnica.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-box">
+              <i class='bx bx-layer'></i>
+              <h4>Design Systems</h4>
+              <span>Tokens CSS & Glassmorphism</span>
+            </div>
+            <div class="highlight-box">
+              <i class='bx bx-brain'></i>
+              <h4>Engenharia de Prompt</h4>
+              <span>Iteração crítica e refinamento</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Acadêmico / FIAP -->
+        <div class="academic-card">
+          <span class="academic-badge">GRADUAÇÃO SUPERIOR</span>
+          <h3>Engenharia de Software</h3>
+          <div class="institution">FIAP — Faculdade de Informática e Administração Paulista</div>
+          <div class="period">RM: 570708 • Turma ESPW</div>
+
+          <ul class="academic-features">
+            <li>
+              <i class='bx bx-check-circle'></i>
+              <span>Domínio em arquiteturas web, desenvolvimento front-end, lógica computacional e APIs.</span>
+            </li>
+            <li>
+              <i class='bx bx-check-circle'></i>
+              <span>Criação de projetos práticos e checkpoints com avaliação rigorosa em código e UX.</span>
+            </li>
+            <li>
+              <i class='bx bx-check-circle'></i>
+              <span>Foco em metodologias ágeis, trabalho colaborativo e entregas de valor contínuo.</span>
+            </li>
+            <li>
+              <i class='bx bx-check-circle'></i>
+              <span>Aplicação de acessibilidade digital (WCAG) e padrões semânticos de interface.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO: SKILLS & COMPETÊNCIAS TÉCNICAS
+       ========================================================================== -->
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <i class='bx bx-wrench'></i>
+          <span>ARSENAL TÉCNICO</span>
+        </div>
+        <h2 class="section-title">Habilidades & Tecnologias Dominadas</h2>
+        <p class="section-desc">
+          Conjunto de ferramentas e práticas aplicadas diariamente na construção de soluções web robustas, estéticas e escaláveis.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Categoria 1: Front-End Core -->
+        <div class="skill-category-card">
+          <div class="skill-card-icon">
+            <i class='bx bxl-javascript'></i>
+          </div>
+          <h3>Front-End Core & Fundamentos</h3>
+          <p>Bases sólidas para interfaces resilientes, semânticas e acessíveis em qualquer dispositivo.</p>
+          <div class="skill-tags">
+            <span class="skill-tag"><i class='bx bxl-html5'></i> HTML5 Semântico</span>
+            <span class="skill-tag"><i class='bx bxl-css3'></i> CSS3 Avançado</span>
+            <span class="skill-tag"><i class='bx bxl-javascript'></i> JavaScript (ES6+)</span>
+            <span class="skill-tag"><i class='bx bx-grid-alt'></i> CSS Grid & Flexbox</span>
+            <span class="skill-tag"><i class='bx bx-mobile-alt'></i> Responsive Design</span>
+            <span class="skill-tag"><i class='bx bx-universal-access'></i> Acessibilidade WCAG</span>
+          </div>
+        </div>
+
+        <!-- Categoria 2: Frameworks & Creative Tech -->
+        <div class="skill-category-card">
+          <div class="skill-card-icon">
+            <i class='bx bxl-tailwind-css'></i>
+          </div>
+          <h3>Frameworks & Creative Coding</h3>
+          <p>Técnicas contemporâneas de estilização ágil e experiências visuais imersivas em alta fidelidade.</p>
+          <div class="skill-tags">
+            <span class="skill-tag"><i class='bx bxl-tailwind-css'></i> Tailwind CSS</span>
+            <span class="skill-tag"><i class='bx bxl-bootstrap'></i> Bootstrap 5</span>
+            <span class="skill-tag"><i class='bx bx-play-circle'></i> GSAP 3 & ScrollTrigger</span>
+            <span class="skill-tag"><i class='bx bx-scatter-chart'></i> Canvas 2D Physics</span>
+            <span class="skill-tag"><i class='bx bx-volume-full'></i> Web Audio API</span>
+            <span class="skill-tag"><i class='bx bx-palette'></i> Glassmorphism UI</span>
+          </div>
+        </div>
+
+        <!-- Categoria 3: Vibecoding & Engenharia de IA -->
+        <div class="skill-category-card">
+          <div class="skill-card-icon">
+            <i class='bx bx-bot'></i>
+          </div>
+          <h3>Vibecoding & Ferramentas Modernas</h3>
+          <p>Uso estratégico de IA generativa com olhar crítico, controle de versão e depuração rigorosa.</p>
+          <div class="skill-tags">
+            <span class="skill-tag"><i class='bx bx-terminal'></i> Engenharia de Prompt</span>
+            <span class="skill-tag"><i class='bx bxl-git'></i> Git & GitHub Workflow</span>
+            <span class="skill-tag"><i class='bx bx-bug'></i> Chrome DevTools QA</span>
+            <span class="skill-tag"><i class='bx bx-slider-alt'></i> Design Tokens</span>
+            <span class="skill-tag"><i class='bx bx-rocket'></i> Deploy Vercel / Pages</span>
+            <span class="skill-tag"><i class='bx bx-code-block'></i> Clean Architecture</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO: PROJETOS EM DESTAQUE (PORTFÓLIO)
+       ========================================================================== -->
+  <section id="projetos" class="projects-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <i class='bx bx-folder'></i>
+          <span>CASES SELECIONADOS</span>
+        </div>
+        <h2 class="section-title">Projetos Realizados ao Longo do Ano</h2>
+        <p class="section-desc">
+          Explore os repositórios práticos desenvolvidos com foco em performance, identidade visual requintada e diferentes paradigmas de interface.
+        </p>
+      </div>
+
+      <!-- Barra de Filtros Interativa -->
+      <div class="projects-filter-bar">
+        <button class="filter-btn active" data-filter="all">Todos os Projetos</button>
+        <button class="filter-btn" data-filter="luxury">Dark Luxury & UI</button>
+        <button class="filter-btn" data-filter="vibecoding">Vibecoding & Creative</button>
+        <button class="filter-btn" data-filter="systems">Sistemas & IA</button>
+      </div>
+
+      <!-- Grid de Cards de Projetos -->
+      <div class="projects-grid">
+
+        <!-- Projeto 1: Apex Motors -->
+        <article class="project-card" data-category="luxury">
+          <div class="project-media">
+            <span class="project-category-badge">Dark Luxury Automotive</span>
+            <img src="assets/projects/hero_supercar.jpg" alt="Apex Motors Website Preview" loading="lazy">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Apex Motors</h3>
+            <p class="project-desc">
+              Plataforma digital para supercarros e veículos de luxo. Conta com estética dark luxury, micro-gradientes, glassmorphism, hero dinâmico com métricas de desempenho e fluxo VIP de agendamento de test drive com toasts.
+            </p>
+            <div class="project-techs">
+              <span class="tech-chip">HTML5</span>
+              <span class="tech-chip">CSS3 Glassmorphism</span>
+              <span class="tech-chip">Vanilla JS</span>
+              <span class="tech-chip">Design Tokens</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/GustavoLouro/Apex-Motors.git" target="_blank" rel="noopener noreferrer" class="btn-project-primary">
+                <i class='bx bxl-github'></i>
+                <span>Repositório</span>
+              </a>
+              <button class="btn-project-outline btn-view-details" data-project="apex-motors">
+                <i class='bx bx-detail'></i>
+                <span>Ver Detalhes</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Projeto 2: Vibecraft Lab -->
+        <article class="project-card" data-category="vibecoding">
+          <div class="project-media">
+            <span class="project-category-badge">Creative Vibecoding</span>
+            <img src="assets/projects/banner.webp" alt="Vibecraft Lab Preview" loading="lazy">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Vibecraft Lab // Front-End Paradigms</h3>
+            <p class="project-desc">
+              Laboratório comparativo entre Bootstrap 5, Tailwind CSS e Vibecoding cinematográfico (NEXUS // ZERO). Traz física de partículas em Canvas 2D, animações GSAP ScrollTrigger, síntese procedural de som via Web Audio API e documentação técnica completa.
+            </p>
+            <div class="project-techs">
+              <span class="tech-chip">GSAP 3.12</span>
+              <span class="tech-chip">Canvas 2D</span>
+              <span class="tech-chip">Web Audio API</span>
+              <span class="tech-chip">Tailwind & Bootstrap</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/GustavoLouro/vibecraft-lab.git" target="_blank" rel="noopener noreferrer" class="btn-project-primary">
+                <i class='bx bxl-github'></i>
+                <span>Repositório</span>
+              </a>
+              <button class="btn-project-outline btn-view-details" data-project="vibecraft-lab">
+                <i class='bx bx-detail'></i>
+                <span>Ver Detalhes</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Projeto 3: Urban Garage -->
+        <article class="project-card" data-category="luxury">
+          <div class="project-media">
+            <span class="project-category-badge">Esportivo & Vitrine</span>
+            <img src="assets/projects/porsche.jpg" alt="Urban Garage Preview" loading="lazy">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Projeto Urban Garage</h3>
+            <p class="project-desc">
+              Showcase automotivo moderno voltado a veículos esportivos de alta performance. Apresenta vitrine de modelos com especificações mecânicas, narrativa de marca, formulário integrado de atendimento e design esportivo marcante.
+            </p>
+            <div class="project-techs">
+              <span class="tech-chip">HTML5 Semântico</span>
+              <span class="tech-chip">CSS Grid / Flex</span>
+              <span class="tech-chip">UI Futurista</span>
+              <span class="tech-chip">Interações DOM</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/GustavoLouro/Projeto-UrbanGarage.git" target="_blank" rel="noopener noreferrer" class="btn-project-primary">
+                <i class='bx bxl-github'></i>
+                <span>Repositório</span>
+              </a>
+              <button class="btn-project-outline btn-view-details" data-project="urban-garage">
+                <i class='bx bx-detail'></i>
+                <span>Ver Detalhes</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Projeto 4: VetPurina AI -->
+        <article class="project-card" data-category="systems">
+          <div class="project-media">
+            <span class="project-category-badge">Assistente Inteligente & IA</span>
+            <img src="assets/projects/luxury_suv.jpg" alt="VetPurina AI Preview" loading="lazy">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">VetPurina AI</h3>
+            <p class="project-desc">
+              Assistente inteligente para médicos-veterinários com suporte clínico e cálculo de dietas da linha Purina Pro Plan. Conta com gamificação de recomendações, sistema de pontos e interface voltada a agilidade médica.
+            </p>
+            <div class="project-techs">
+              <span class="tech-chip">Inteligência Artificial</span>
+              <span class="tech-chip">Gamificação</span>
+              <span class="tech-chip">Lógica Clínica</span>
+              <span class="tech-chip">Front-End Responsivo</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/GustavoLouro/VetPurina-AI" target="_blank" rel="noopener noreferrer" class="btn-project-primary">
+                <i class='bx bxl-github'></i>
+                <span>Repositório</span>
+              </a>
+              <button class="btn-project-outline btn-view-details" data-project="vetpurina-ai">
+                <i class='bx bx-detail'></i>
+                <span>Ver Detalhes</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO: EVENTOS & EXPERIÊNCIAS (TIMELINE)
+       ========================================================================== -->
+  <section id="eventos" class="events-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <i class='bx bx-calendar-event'></i>
+          <span>TIMELINE & PARTICIPAÇÕES</span>
+        </div>
+        <h2 class="section-title">Eventos, Hackathons & Imersões</h2>
+        <p class="section-desc">
+          Presença ativa em eventos de tecnologia, maratonas de programação e iniciativas de inovação ao longo da formação acadêmica.
+        </p>
+      </div>
+
+      <div class="timeline-wrapper">
+        <div class="timeline-line"></div>
+
+        <!-- Evento 1 -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="event-date">2026 // ED. ANUAL</span>
+              <span class="event-category">INOVAÇÃO & PITCH</span>
+            </div>
+            <h3>FIAP NEXT // Festival de Tecnologia e Inovação</h3>
+            <div class="event-location">
+              <i class='bx bx-map-pin'></i>
+              <span>FIAP — São Paulo, SP</span>
+            </div>
+            <p>
+              Participação no principal ecossistema de demonstração de projetos da FIAP. Apresentação de soluções digitais voltadas para o mercado, networking com especialistas da indústria e validação prática de interfaces orientadas ao usuário final.
+            </p>
+            <div class="event-highlights">
+              <span class="event-tag">#Pitch</span>
+              <span class="event-tag">#Inovação</span>
+              <span class="event-tag">#FrontEnd</span>
+              <span class="event-tag">#Networking</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evento 2 -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="event-date">2026 // HACKATHON</span>
+              <span class="event-category">MARATONA DE CÓDIGO</span>
+            </div>
+            <h3>Hackathon de Inovação & IA Aplicada</h3>
+            <div class="event-location">
+              <i class='bx bx-map-pin'></i>
+              <span>Imersão Prática / Competição</span>
+            </div>
+            <p>
+              Desenvolvimento sob pressão de protótipos funcionais integrando inteligência artificial generativa, metodologias ágeis de desenvolvimento em sprint e construção de interfaces de resposta rápida em menos de 48 horas.
+            </p>
+            <div class="event-highlights">
+              <span class="event-tag">#Hackathon</span>
+              <span class="event-tag">#AIIntegration</span>
+              <span class="event-tag">#RapidPrototyping</span>
+              <span class="event-tag">#TrabalhoEmEquipe</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evento 3 -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="event-date">2026 // WORKSHOP</span>
+              <span class="event-category">FRONT-END WORKSHOP</span>
+            </div>
+            <h3>Imersão em Paradigmas Front-End & Vibecoding</h3>
+            <div class="event-location">
+              <i class='bx bx-map-pin'></i>
+              <span>Laboratório de Interface // FIAP</span>
+            </div>
+            <p>
+              Exploração profunda das diferenças estruturais entre desenvolvimento atômico com Tailwind, componentização com Bootstrap e técnicas de Vibecoding com GSAP, Canvas 2D e Web Audio API, consolidada no projeto Vibecraft Lab.
+            </p>
+            <div class="event-highlights">
+              <span class="event-tag">#Vibecoding</span>
+              <span class="event-tag">#GSAP</span>
+              <span class="event-tag">#Canvas2D</span>
+              <span class="event-tag">#CreativeCoding</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evento 4 -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="event-date">2025/2026 // CONFERÊNCIA</span>
+              <span class="event-category">COMUNIDADE TECH</span>
+            </div>
+            <h3>Conferências de Tecnologia, IA & Comunidade Dev</h3>
+            <div class="event-location">
+              <i class='bx bx-map-pin'></i>
+              <span>São Paulo, SP</span>
+            </div>
+            <p>
+              Acompanhamento de tendências globais de mercado, arquitetura de sistemas, modern web frameworks, agentes inteligentes e futuro da engenharia de software através de palestras e workshops presenciais.
+            </p>
+            <div class="event-highlights">
+              <span class="event-tag">#SoftwareEngineering</span>
+              <span class="event-tag">#WebDev</span>
+              <span class="event-tag">#AI</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO: CONTATO & CONEXÃO
+       ========================================================================== -->
+  <section id="contato" class="contact-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <i class='bx bx-message-rounded-dots'></i>
+          <span>VAMOS CONVERSAR?</span>
+        </div>
+        <h2 class="section-title">Entre em Contato</h2>
+        <p class="section-desc">
+          Interessado em colaborar em novos projetos, trocar experiências sobre front-end ou conversar sobre oportunidades profissionais? Fique à vontade para me contatar.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Cartão de Informações de Contato -->
+        <div class="contact-info-card">
+          <h3>Canais Diretos</h3>
+          <p>
+            Estou sempre aberto a novos desafios de engenharia front-end, projetos com foco em design diferenciado e oportunidades de estágio / desenvolvimento de software.
+          </p>
+
+          <div class="contact-links-list">
+            <!-- E-mail com botão Copiar -->
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class='bx bx-envelope'></i>
+              </div>
+              <div class="contact-details">
+                <span>E-MAIL PROFISSIONAL</span>
+                <a href="mailto:gustavotatobelgu@gmail.com">gustavotatobelgu@gmail.com</a>
+              </div>
+              <button class="copy-btn" data-copy="gustavotatobelgu@gmail.com" title="Copiar e-mail">
+                <i class='bx bx-copy'></i> Copiar
+              </button>
+            </div>
+
+            <!-- GitHub -->
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class='bx bxl-github'></i>
+              </div>
+              <div class="contact-details">
+                <span>PERFIL GITHUB</span>
+                <a href="https://github.com/GustavoLouro" target="_blank" rel="noopener noreferrer">github.com/GustavoLouro</a>
+              </div>
+            </div>
+
+            <!-- Localização & Formação -->
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class='bx bx-map'></i>
+              </div>
+              <div class="contact-details">
+                <span>LOCALIZAÇÃO & INSTITUIÇÃO</span>
+                <strong>São Paulo, Brasil • FIAP</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulário Interativo de Contato -->
+        <div class="contact-form-wrapper">
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="name">SEU NOME COMPLETO *</label>
+              <input type="text" id="name" class="form-control" placeholder="Ex: Roberto Andrade" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">SEU E-MAIL DE CONTATO *</label>
+              <input type="email" id="email" class="form-control" placeholder="Ex: roberto@empresa.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">ASSUNTO</label>
+              <input type="text" id="subject" class="form-control" placeholder="Ex: Oportunidade de Projeto / Contratação">
+            </div>
+
+            <div class="form-group">
+              <label for="message">SUA MENSAGEM *</label>
+              <textarea id="message" class="form-control" placeholder="Descreva brevemente sua proposta ou dúvida..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              <i class='bx bx-send'></i>
+              <span>Enviar Mensagem Agora</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          Gustavo Louro <span>// FIAP RM570708</span>
+        </div>
+        <ul class="footer-links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#eventos">Eventos</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="https://github.com/GustavoLouro" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Gustavo Rezende Louro. Desenvolvido com Engenharia Front-End, Vibecoding & Inteligência Artificial. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODAL DINÂMICO DE DETALHES DO PROJETO
+       ========================================================================== -->
+  <div id="project-modal" class="modal-overlay" aria-hidden="true" role="dialog">
+    <div class="modal-container">
+      <button class="modal-close-btn" aria-label="Fechar modal de projeto">
+        <i class='bx bx-x'></i>
+      </button>
+      <img src="" alt="" class="modal-header-img">
+      <div class="modal-body">
+        <span class="modal-tag"></span>
+        <h3 class="modal-title"></h3>
+        <p class="modal-description"></p>
+
+        <div class="modal-specs-box">
+          <h4><i class='bx bx-code-block'></i> DESTAQUES TÉCNICOS & ARQUITETURA</h4>
+          <ul class="modal-specs-list"></ul>
+        </div>
+
+        <div class="modal-actions">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-primary btn-modal-github">
+            <i class='bx bxl-github'></i>
+            <span>Acessar Código no GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script Principal -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

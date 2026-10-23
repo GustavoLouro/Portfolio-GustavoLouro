@@ -1,0 +1,149 @@
+================================================================================
+CHECKPOINT 6: VIBECODING — CONSTRUINDO UMA LANDING PAGE COM IA
+REGISTRO COMPLETO DE PROMPTS E PROCESSO DE CO-CRIAÇÃO
+Aluno: Gustavo Rezende Louro
+RM: 570708 | FIAP — Engenharia de Software (Turma ESPW)
+E-mail: gustavotatobelgu@gmail.com
+Repositório: https://github.com/GustavoLouro/checkpoint-6-portfolio
+Deploy: https://gustavolouro.github.io/checkpoint-6-portfolio/
+================================================================================
+
+--------------------------------------------------------------------------------
+01. PROMPT INICIAL (EXATAMENTE COMO FOI ENVIADO)
+--------------------------------------------------------------------------------
+
+"Atue como um Engenheiro Front-End Sênior e Especialista em UI/UX Design System. 
+Preciso desenvolver a landing page do meu portfólio profissional de Engenharia de 
+Software para o Checkpoint 6 de Front-End da FIAP. 
+
+Meu nome é Gustavo Rezende Louro, meu e-mail é gustavotatobelgu@gmail.com e sou 
+estudante de Engenharia de Software na FIAP (RM570708). 
+
+Quero que a página tenha um nível altíssimo de sofisticação visual ('dark luxury', 
+cyber-minimalista, com micro-gradientes, glassmorphism e partículas interativas), 
+semelhante aos sites premiados no Awwwards e referências como Linear e Vercel.
+
+A página deve ser construída em HTML5 semântico, CSS3 moderno (com variáveis e 
+design tokens) e Vanilla JavaScript, com carregamento rápido e zero dependências 
+pesadas de build.
+
+O portfólio precisa conter as seguintes seções:
+1. Header fixo com efeito de vidro (frosted glass/glassmorphism), logo GL, links de navegação, badge de disponibilidade piscando e botão de contato.
+2. Hero Section com headline de impacto, apresentação do meu foco (Engenharia Front-End, Vibecoding, Clean Code), botões de ação e um card interativo com bloco de código e métricas.
+3. Seção Sobre Mim & Formação Acadêmica destacando minha graduação em Engenharia de Software na FIAP.
+4. Seção Skills & Competências categorizadas (Front-End Core, Frameworks & Creative Coding, Vibecoding & IA Generativa).
+5. Seção Projetos em Destaque contendo:
+   - Apex Motors (https://github.com/GustavoLouro/Apex-Motors.git)
+   - Vibecraft Lab // Front-End Paradigmas (https://github.com/GustavoLouro/vibecraft-lab.git)
+   - Projeto Urban Garage (https://github.com/GustavoLouro/Projeto-UrbanGarage.git)
+   - VetPurina AI (https://github.com/GustavoLouro/VetPurina-AI)
+   Com filtros interativos e modal pop-up com especificações técnicas.
+6. Seção de Eventos & Experiências em formato de linha do tempo (timeline vertical).
+7. Seção de Contato com formulário funcional e botão de copiar e-mail com 1 clique.
+8. Footer profissional.
+
+Certifique-se de que a paleta de cores tenha contraste WCAG, as fontes sejam 
+Outfit, Plus Jakarta Sans e JetBrains Mono, e que o site seja 100% responsivo."
+
+
+--------------------------------------------------------------------------------
+02. PROMPTS DE AJUSTE E ITERAÇÃO (NA ORDEM EXATA DE ENVIO)
+--------------------------------------------------------------------------------
+
+[PROMPT DE AJUSTE 1 — Canvas e Fundo de Partículas]
+"No fundo da página, o canvas de partículas está estático em telas de alta resolução 
+e quando redimensiono a janela ele perde a proporção ou cria barras de rolagem. 
+Refatore a inicialização do canvas no JavaScript para calcular width e height via 
+window.innerWidth e window.innerHeight dinamicamente no resize, crie uma física de 
+repulsão suave quando o cursor do mouse se aproximar das partículas e adicione uma 
+verificação para 'prefers-reduced-motion', respeitando a acessibilidade do usuário."
+
+[PROMPT DE AJUSTE 2 — Grid de Projetos e Filtros Dinâmicos]
+"Na seção de projetos, quero que os cards tenham uma transição mais fluida ao 
+alternar entre as abas de filtro ('Todos', 'Dark Luxury & UI', 'Vibecoding & Creative', 
+'Sistemas & IA'). Ajuste o JavaScript para aplicar uma animação suave de fadeInCard 
+nos cards que ficam visíveis e estilize o botão ativo com um gradiente luminoso ciano 
+e sombra difusa para dar feedback claro ao usuário."
+
+[PROMPT DE AJUSTE 3 — Modal de Detalhes do Projeto]
+"O modal de detalhes do projeto precisa de melhorias na experiência de usuário. 
+Quero que ele possa ser fechado não apenas no botão 'X', mas também clicando fora do 
+card (no backdrop escuro) e apertando a tecla Escape no teclado. Além disso, quando o 
+modal estiver aberto, trave a rolagem da página (overflow: hidden no body) para evitar 
+que a página role por trás do modal."
+
+[PROMPT DE AJUSTE 4 — Feedback Visual e Interatividade no Contato]
+"No formulário de contato e no botão de copiar e-mail, quero um sistema de 
+notificações Toast flutuante no canto inferior direito, sem usar bibliotecas externas. 
+Quando o usuário clicar em 'Copiar E-mail', copie 'gustavotatobelgu@gmail.com' para a 
+área de transferência e exiba um Toast verde/ciano confirmando a cópia. Quando enviar 
+o formulário, valide os campos obrigatórios e mostre outro Toast parabenizando pelo 
+envio, limpando os campos em seguida."
+
+[PROMPT DE AJUSTE 5 — Timeline de Eventos & Responsividade Mobile]
+"Na visualização em dispositivos móveis (telas abaixo de 768px), os nós da timeline 
+estavam desalinhados com o texto e o menu de navegação da navbar estava ocupando 
+espaço incorreto. Ajuste o media query para recuar a linha da timeline para 15px, 
+posicionar os nós no topo de cada item e transformar a navbar em um menu hambúrguer 
+com animação suave de slide-down e backdrop blur de 20px."
+
+
+--------------------------------------------------------------------------------
+03. REGISTRO DE CORREÇÕES (FICHAS CURTAS — ITEM 3.4 DO CHECKPOINT)
+--------------------------------------------------------------------------------
+
+FICHA DE CORREÇÃO 1:
+- Campo: O que registrar
+- Problema: O canvas de partículas em segundo plano sofria distorção ao redimensionar a janela do navegador e continuava rodando mesmo para usuários com sensibilidade a movimento.
+- Prompt de correção: "Refatore a inicialização do canvas no JavaScript para calcular width e height dinamicamente no evento de resize, crie repulsão suave com o mouse e inclua checagem de window.matchMedia('(prefers-reduced-motion: reduce)')."
+- Resultado: Resolveu totalmente. O canvas agora redesenha as partículas perfeitamente adaptado ao viewport e respeita preferências do sistema operacional.
+- Aprendizado: No prompt inicial, sempre que solicitar elementos dinâmicos de animação gráfica em Canvas 2D, devo especificar explicitamente a tratativa de resize e a regra de acessibilidade para movimento reduzido.
+
+FICHA DE CORREÇÃO 2:
+- Campo: O que registrar
+- Problema: Ao alternar os filtros de categorias dos projetos, os cards surgiam abruptamente sem transição visual, prejudicando o requinte da interface.
+- Prompt de correção: "Ajuste o JavaScript para aplicar uma animação suave de fadeInCard nos cards visíveis e adicione efeito gradiente ativo no botão da categoria selecionada."
+- Resultado: Resolveu totalmente. A troca de categorias agora é suave e visualmente agradável com keyframes CSS.
+- Aprendizado: Em interfaces com filtros dinâmicos, é essencial pedir a combinação de classes de estado ativas no CSS junto com os listeners do JavaScript para garantir consistência estética.
+
+FICHA DE CORREÇÃO 3:
+- Campo: O que registrar
+- Problema: O modal de detalhes do projeto permitia que o usuário continuasse rolando a página de fundo e só podia ser fechado clicando no ícone 'X'.
+- Prompt de correção: "Habilite o fechamento do modal ao clicar no backdrop e via tecla Escape, além de travar o overflow do body enquanto o modal estiver aberto."
+- Resultado: Resolveu totalmente. A usabilidade e conformidade com padrões de acessibilidade (ARIA/Keyboard Navigation) foram atingidas.
+- Aprendizado: Componentes modais exigem especificações explícitas de UX: focus trap, tecla ESC, backdrop dismiss e bloqueio de scroll da página principal.
+
+FICHA DE CORREÇÃO 4:
+- Campo: O que registrar
+- Problema: O clique no botão de copiar e-mail não dava retorno sensorial visível ao usuário de que a ação havia sido concluída com sucesso.
+- Prompt de correção: "Crie um componente de Toast flutuante com animação de slide, ícone de confirmação e tempo de exibição de 4 segundos para avisar a cópia do e-mail e o envio da mensagem."
+- Resultado: Resolveu totalmente. O Toast fornece micro-feedback imediato sem poluir a tela.
+- Aprendizado: Sempre planejar micro-feedbacks (toasts, haptic feedback visual ou sonoro) no escopo inicial de interações assíncronas e cópia de dados.
+
+FICHA DE CORREÇÃO 5:
+- Campo: O que registrar
+- Problema: A linha do tempo de eventos quebrava a hierarquia visual em celulares com tela de 375px (iPhone), empurrando os textos para fora da margem.
+- Prompt de correção: "Ajuste o media query da seção de eventos para que a linha fique fixada em left: 15px, os nós fiquem em left: 5px e o padding-left do container reduza para 45px no mobile."
+- Resultado: Resolveu totalmente. A leitura em smartphones ficou limpa, com espaçamento confortável e sem scroll horizontal indesejado.
+- Aprendizado: Fornecer os pontos de interrupção (breakpoints) e comportamentos de margem reduzida para elementos com layouts verticais assimétricos logo na primeira instrução de CSS.
+
+
+--------------------------------------------------------------------------------
+04. REFLEXÃO FINAL (ITEM 3.5 DO CHECKPOINT)
+--------------------------------------------------------------------------------
+
+O que ficou como imaginei:
+A atmosfera visual superou as expectativas. A combinação da paleta Dark Luxury 
+(tons escuros profundos contrastando com ciano neon e roxo vibrante), os cartões 
+em glassmorphism com backdrop blur e as partículas do canvas deram ao portfólio a 
+identidade de um produto tecnológico de ponta. A integração dos repositórios reais 
+(Apex Motors, Vibecraft Lab, Urban Garage e VetPurina AI) com o modal dinâmico 
+permitiu demonstrar a profundidade técnica de cada projeto sem sobrecarregar a 
+leitura inicial da página.
+
+O que eu ainda mudaria / próximos passos:
+Em uma futura iteração, implementaria internacionalização (i18n) para alternar 
+o portfólio entre Português e Inglês com um clique, adicionaria um visualizador 
+3D interativo via Three.js ou WebGL para um modelo automotivo giratório no Hero, 
+e integraria uma API serverless (como Resend ou EmailJS) para disparo direto de 
+e-mails em tempo real sem depender do client-side.
