@@ -6,33 +6,33 @@
 
 /* --- Variáveis de Design & Identidade Visual --- */
 :root {
-  /* Cores Principais (Paleta IDV Checkpoint 6) */
-  --bg-deep: #06080d;
-  --bg-surface: #0b0f19;
-  --bg-card: rgba(15, 22, 36, 0.72);
-  --bg-card-hover: rgba(22, 32, 52, 0.85);
-  --bg-glass: rgba(11, 15, 25, 0.65);
+  /* Cores Principais — Paleta Pure Black & Neon Orange */
+  --bg-deep: #000000;
+  --bg-surface: #08080a;
+  --bg-card: rgba(14, 14, 17, 0.82);
+  --bg-card-hover: rgba(22, 22, 28, 0.92);
+  --bg-glass: rgba(10, 10, 14, 0.75);
   
-  --accent-cyan: #00f2fe;
-  --accent-blue: #4facfe;
-  --accent-violet: #8a2be2;
-  --accent-purple: #7928ca;
-  --accent-glow: rgba(0, 242, 254, 0.35);
-  --accent-purple-glow: rgba(121, 40, 202, 0.3);
+  --accent-cyan: #ff6b00; /* Neon Orange Primário */
+  --accent-blue: #ff8c00; /* Amber Gold Orange */
+  --accent-violet: #ff4500; /* Deep Orange Sunset */
+  --accent-purple: #ff5500; /* Bright Racing Orange */
+  --accent-glow: rgba(255, 107, 0, 0.45);
+  --accent-purple-glow: rgba(255, 69, 0, 0.35);
 
   --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-subtle: #64748b;
-  --text-dim: #475569;
+  --text-muted: #a1a1aa;
+  --text-subtle: #71717a;
+  --text-dim: #52525b;
 
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(0, 242, 254, 0.4);
-  --border-glass: rgba(255, 255, 255, 0.12);
+  --border-hover: rgba(255, 107, 0, 0.5);
+  --border-glass: rgba(255, 255, 255, 0.1);
 
-  --gradient-brand: linear-gradient(135deg, #00f2fe 0%, #4facfe 45%, #7928ca 100%);
-  --gradient-text: linear-gradient(135deg, #ffffff 10%, #94a3b8 100%);
-  --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-  --gradient-dark: linear-gradient(180deg, #06080d 0%, #0b0f19 100%);
+  --gradient-brand: linear-gradient(135deg, #ff6b00 0%, #ff8c00 50%, #ff3b00 100%);
+  --gradient-text: linear-gradient(135deg, #ffffff 10%, #d4d4d8 100%);
+  --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+  --gradient-dark: linear-gradient(180deg, #000000 0%, #08080a 100%);
 
   /* Tipografia */
   --font-heading: 'Outfit', sans-serif;
@@ -45,8 +45,8 @@
   --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Sombras & Brilhos */
-  --shadow-card: 0 12px 36px -10px rgba(0, 0, 0, 0.7);
-  --shadow-hover: 0 20px 48px -12px rgba(0, 242, 254, 0.25);
+  --shadow-card: 0 12px 36px -10px rgba(0, 0, 0, 0.85);
+  --shadow-hover: 0 20px 48px -12px rgba(255, 107, 0, 0.35);
   --shadow-glow: 0 0 30px var(--accent-glow);
 
   /* Dimensões */
@@ -82,7 +82,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Fundo Radiante, Cyber-Grid & Texturas Dinâmicas Exclusivas */
+/* Fundo Radiante, Cyber-Grid & Texturas Dinâmicas Exclusivas (Pure Black & Orange) */
 body::before {
   content: '';
   position: fixed;
@@ -91,9 +91,9 @@ body::before {
   width: 100vw;
   height: 100vh;
   background-image: 
-    radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.09) 0%, transparent 50%),
-    radial-gradient(circle at 85% 30%, rgba(121, 40, 202, 0.11) 0%, transparent 55%),
-    radial-gradient(circle at 50% 85%, rgba(79, 172, 254, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 15% 15%, rgba(255, 107, 0, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(255, 69, 0, 0.1) 0%, transparent 55%),
+    radial-gradient(circle at 50% 85%, rgba(255, 140, 0, 0.08) 0%, transparent 60%),
     linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 100% 100%, 64px 64px, 64px 64px;
@@ -110,7 +110,7 @@ body::before {
   height: 100%;
   pointer-events: none;
   z-index: -1;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 /* Spotlight Aura do Cursor */
@@ -123,7 +123,7 @@ body::before {
   margin-left: -190px;
   margin-top: -190px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 242, 254, 0.07) 0%, rgba(121, 40, 202, 0.03) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 107, 0, 0.1) 0%, rgba(255, 69, 0, 0.03) 40%, transparent 70%);
   pointer-events: none;
   z-index: 999;
   transform: translate3d(-100px, -100px, 0);
@@ -520,6 +520,76 @@ img {
   right: 0;
   height: 2px;
   background: var(--gradient-brand);
+}
+
+/* Header de Perfil do Hero com Foto Oficial */
+.hero-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.hero-avatar-wrapper {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+}
+
+.hero-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 2px solid var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(255, 107, 0, 0.45);
+}
+
+.avatar-status-badge {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #10b981;
+  border: 2px solid var(--bg-deep);
+  box-shadow: 0 0 10px #10b981;
+}
+
+.hero-profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.profile-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.profile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--accent-cyan);
+}
+
+.profile-loc {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.74rem;
+  color: var(--text-muted);
 }
 
 .card-header-chip {

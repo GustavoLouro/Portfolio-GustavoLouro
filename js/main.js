@@ -65,7 +65,7 @@ function initCyberTopographyCanvas() {
       speedY: (Math.random() - 0.5) * 0.8,
       radius: Math.random() * 1.8 + 0.8,
       alpha: Math.random() * 0.5 + 0.3,
-      color: Math.random() > 0.45 ? '0, 242, 254' : '121, 40, 202'
+      color: Math.random() > 0.45 ? '255, 107, 0' : '255, 160, 0'
     });
   }
 
